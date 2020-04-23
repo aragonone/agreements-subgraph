@@ -1,0 +1,27 @@
+{
+  "name": "@aragon/apps-agreement-subgraph",
+  "version": "0.0.1",
+  "scripts": {
+    "manifest": "./scripts/manifest.sh",
+    "codegen": "./scripts/codegen.sh",
+    "build": "./scripts/build.sh",
+    "deploy": "./scripts/deploy.sh",
+    "manifest:rpc": "NETWORK=rpc npm run manifest",
+    "manifest:rinkeby": "NETWORK=rinkeby npm run manifest",
+    "manifest:mainnet": "NETWORK=mainnet npm run manifest",
+    "codegen:rpc": "NETWORK=rpc npm run codegen",
+    "codegen:rinkeby": "NETWORK=rinkeby npm run codegen",
+    "codegen:mainnet": "NETWORK=mainnet npm run codegen",
+    "build:rpc": "NETWORK=rpc npm run build",
+    "build:rinkeby": "NETWORK=rinkeby npm run build",
+    "build:mainnet": "NETWORK=mainnet npm run build",
+    "deploy:rpc": "NETWORK=rpc npm run deploy",
+    "deploy:rinkeby": "NETWORK=rinkeby npm run deploy",
+    "deploy:mainnet": "NETWORK=mainnet npm run deploy"
+  },
+  "devDependencies": {
+    "@aragon/minime": "1.0.0",
+    "@graphprotocol/graph-cli": "^0.16.0",
+    "@graphprotocol/graph-ts": "^0.16.0"
+  }
+}
