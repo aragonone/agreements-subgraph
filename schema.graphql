@@ -1,0 +1,109 @@
+type DAO @entity {
+  id: ID!
+  agreements: [Agreement!] @derivedFrom(field: "dao")
+}
+
+type Agreement @entity {
+  id: ID!
+  dao: DAO!
+  title: String
+  collateralToken: ERC20
+  arbitrator: Bytes
+  currentSetting: Setting
+  tokenBalancePermission: TokenBalancePermission @derivedFrom(field: "agreement")
+}
+
+enum ActionState {
+  Scheduled,
+  Challenged,
+  Executed,
+  Cancelled
+}
+
+enum ChallengeState {
+  Waiting,
+  Settled,
+  Disputed,
+  Rejected,
+  Accepted,
+  Voided
+}
+
+type Signer @entity {
+  id: ID!
+  address: Bytes!
+  available: BigInt!
+  locked: BigInt!
+  challenged: BigInt!
+  actions: [Action!] @derivedFrom(field: "submitter")
+}
+
+type Action @entity {
+  id: ID!
+  actionId: BigInt!
+  challengeEndDate: BigInt!
+  script: Bytes!
+  context: Bytes!
+  state: ActionState!
+  submitter: Signer!
+  setting: Setting!
+  challenge: Challenge @derivedFrom(field: "action")
+  createdAt: BigInt!
+}
+
+type Challenge @entity {
+  id: ID!
+  action: Action!
+  context: Bytes!
+  settlementEndDate: BigInt!
+  challenger: Bytes!
+  settlementOffer: BigInt!
+  arbitratorFeeAmount: BigInt!
+  arbitratorFeeToken: ERC20!
+  state: ChallengeState!
+  dispute: Dispute @derivedFrom(field: "challenge")
+  createdAt: BigInt!
+}
+
+type Dispute @entity {
+  id: ID!
+  disputeId: BigInt!
+  ruling: BigInt!
+  challenge: Challenge!
+  submitterFinishedEvidence: Boolean!
+  challengerFinishedEvidence: Boolean!
+  evidences: [Evidence!] @derivedFrom(field: "dispute")
+  createdAt: BigInt!
+}
+
+type Evidence @entity {
+  id: ID!
+  dispute: Dispute!
+  data: Bytes!
+  submitter: Bytes!
+  createdAt: BigInt!
+}
+
+type Setting @entity {
+  id: ID!
+  settingId: BigInt!
+  content: Bytes!
+  delayPeriod: BigInt!
+  settlementPeriod: BigInt!
+  collateralAmount: BigInt!
+  challengeCollateral: BigInt!
+}
+
+type TokenBalancePermission @entity {
+  id: ID!
+  agreement: Agreement!
+  token: ERC20!
+  balance: BigInt!
+}
+
+type ERC20 @entity {
+  id: ID!
+  name: String!
+  symbol: String!
+  decimals: Int!
+}
