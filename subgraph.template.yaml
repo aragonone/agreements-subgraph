@@ -1,0 +1,106 @@
+specVersion: 0.0.2
+description: Aragon Agreements subgraph
+repository: https://github.com/aragon/aragon-apps/tree/master/agreement
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: DAOFactory
+    network: {{network}}
+    source:
+      address: "{{factory}}"
+      abi: DAOFactory
+      startBlock: {{startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.3
+      language: wasm/assemblyscript
+      entities:
+        - DAO
+      abis:
+        - name: DAOFactory
+          file: ./abis/DAOFactory.json
+      eventHandlers:
+        - event: DeployDAO(address)
+          handler: handleDeployDAO
+      file: ./src/DAOFactory.ts
+templates:
+  - kind: ethereum/contract
+    name: Kernel
+    network: {{network}}
+    source:
+      abi: Kernel
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.1
+      language: wasm/assemblyscript
+      entities:
+        - DAO
+      abis:
+        - name: Kernel
+          file: ./abis/Kernel.json
+        - name: Agreement
+          file: ./abis/Agreement.json
+        - name: ERC20
+          file: ./abis/MiniMeToken.json
+      eventHandlers:
+        - event: NewAppProxy(address,bool,bytes32)
+          handler: handleNewProxyApp
+      file: ./src/Kernel.ts
+  - kind: ethereum/contract
+    name: Agreement
+    network: {{network}}
+    source:
+      abi: Agreement
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.3
+      language: wasm/assemblyscript
+      entities:
+        - Agreement
+        - ERC20
+      abis:
+        - name: Agreement
+          file: ./abis/Agreement.json
+        - name: ERC20
+          file: ./abis/MiniMeToken.json
+      eventHandlers:
+        - event: ActionScheduled(indexed uint256,indexed address)
+          handler: handleActionScheduled
+        - event: ActionChallenged(indexed uint256,indexed address)
+          handler: handleActionChallenged
+        - event: ActionSettled(indexed uint256,uint256)
+          handler: handleActionSettled
+        - event: ActionDisputed(indexed uint256,indexed address,uint256)
+          handler: handleActionDisputed
+        - event: ActionAccepted(indexed uint256)
+          handler: handleActionAccepted
+        - event: ActionVoided(indexed uint256)
+          handler: handleActionVoided
+        - event: ActionRejected(indexed uint256)
+          handler: handleActionRejected
+        - event: ActionCancelled(indexed uint256)
+          handler: handleActionCancelled
+        - event: ActionExecuted(indexed uint256)
+          handler: handleActionExecuted
+        - event: EvidenceSubmitted(indexed uint256,indexed address,bytes,bool)
+          handler: handleEvidenceSubmitted
+        - event: BalanceStaked(indexed address,uint256)
+          handler: handleBalanceStaked
+        - event: BalanceUnstaked(indexed address,uint256)
+          handler: handleBalanceUnstaked
+        - event: BalanceLocked(indexed address,uint256)
+          handler: handleBalanceLocked
+        - event: BalanceUnlocked(indexed address,uint256)
+          handler: handleBalanceUnlocked
+        - event: BalanceChallenged(indexed address,uint256)
+          handler: handleBalanceChallenged
+        - event: BalanceUnchallenged(indexed address,uint256)
+          handler: handleBalanceUnchallenged
+        - event: BalanceSlashed(indexed address,uint256)
+          handler: handleBalanceSlashed
+        - event: SettingChanged(uint256)
+          handler: handleSettingChanged
+        - event: TokenBalancePermissionChanged(address,uint256)
+          handler: handleTokenBalancePermissionChanged
+      file: ./src/Agreement.ts
