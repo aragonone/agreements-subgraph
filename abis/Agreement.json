@@ -1,0 +1,1434 @@
+{
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_interfaceId",
+          "type": "bytes4"
+        }
+      ],
+      "name": "supportsInterface",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "hasInitialized",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "CHANGE_TOKEN_BALANCE_PERMISSION_ROLE",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_script",
+          "type": "bytes"
+        }
+      ],
+      "name": "getEVMScriptExecutor",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getRecoveryVault",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "title",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "arbitrator",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "token",
+          "type": "address"
+        }
+      ],
+      "name": "allowRecoverability",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "appId",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getInitializationBlock",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "CHALLENGE_ROLE",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "transferToVault",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_sender",
+          "type": "address"
+        },
+        {
+          "name": "_role",
+          "type": "bytes32"
+        },
+        {
+          "name": "_params",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "canPerform",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getEVMScriptRegistry",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "collateralToken",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "CHANGE_AGREEMENT_ROLE",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "kernel",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isPetrified",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "SIGN_ROLE",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "actionId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "name": "submitter",
+          "type": "address"
+        }
+      ],
+      "name": "ActionScheduled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "actionId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "name": "challenger",
+          "type": "address"
+        }
+      ],
+      "name": "ActionChallenged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "actionId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "offer",
+          "type": "uint256"
+        }
+      ],
+      "name": "ActionSettled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "actionId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "name": "arbtirator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "disputeId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ActionDisputed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ActionAccepted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ActionVoided",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ActionRejected",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ActionCancelled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ActionExecuted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "signer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "BalanceStaked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "signer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "BalanceUnstaked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "signer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "BalanceLocked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "signer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "BalanceUnlocked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "signer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "BalanceChallenged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "signer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "BalanceUnchallenged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "signer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "BalanceSlashed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "settingId",
+          "type": "uint256"
+        }
+      ],
+      "name": "SettingChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "balance",
+          "type": "uint256"
+        }
+      ],
+      "name": "TokenBalancePermissionChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "executor",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "script",
+          "type": "bytes"
+        },
+        {
+          "indexed": false,
+          "name": "input",
+          "type": "bytes"
+        },
+        {
+          "indexed": false,
+          "name": "returnData",
+          "type": "bytes"
+        }
+      ],
+      "name": "ScriptResult",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "vault",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "RecoverToVault",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "arbitrator",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "disputeId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "ruling",
+          "type": "uint256"
+        }
+      ],
+      "name": "Ruled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "disputeId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "name": "submitter",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "evidence",
+          "type": "bytes"
+        },
+        {
+          "indexed": false,
+          "name": "finished",
+          "type": "bool"
+        }
+      ],
+      "name": "EvidenceSubmitted",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_title",
+          "type": "string"
+        },
+        {
+          "name": "_content",
+          "type": "bytes"
+        },
+        {
+          "name": "_collateralToken",
+          "type": "address"
+        },
+        {
+          "name": "_collateralAmount",
+          "type": "uint256"
+        },
+        {
+          "name": "_challengeCollateral",
+          "type": "uint256"
+        },
+        {
+          "name": "_arbitrator",
+          "type": "address"
+        },
+        {
+          "name": "_delayPeriod",
+          "type": "uint64"
+        },
+        {
+          "name": "_settlementPeriod",
+          "type": "uint64"
+        },
+        {
+          "name": "_permissionToken",
+          "type": "address"
+        },
+        {
+          "name": "_permissionBalance",
+          "type": "uint256"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "stake",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_signer",
+          "type": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "stakeFor",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "receiveApproval",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "unstake",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_context",
+          "type": "bytes"
+        },
+        {
+          "name": "_script",
+          "type": "bytes"
+        }
+      ],
+      "name": "schedule",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "execute",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "cancel",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        },
+        {
+          "name": "_settlementOffer",
+          "type": "uint256"
+        },
+        {
+          "name": "_context",
+          "type": "bytes"
+        }
+      ],
+      "name": "challengeAction",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "settle",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "disputeChallenge",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_disputeId",
+          "type": "uint256"
+        },
+        {
+          "name": "_evidence",
+          "type": "bytes"
+        },
+        {
+          "name": "_finished",
+          "type": "bool"
+        }
+      ],
+      "name": "submitEvidence",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "executeRuling",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_disputeId",
+          "type": "uint256"
+        },
+        {
+          "name": "_ruling",
+          "type": "uint256"
+        }
+      ],
+      "name": "rule",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_content",
+          "type": "bytes"
+        },
+        {
+          "name": "_delayPeriod",
+          "type": "uint64"
+        },
+        {
+          "name": "_settlementPeriod",
+          "type": "uint64"
+        },
+        {
+          "name": "_collateralAmount",
+          "type": "uint256"
+        },
+        {
+          "name": "_challengeCollateral",
+          "type": "uint256"
+        }
+      ],
+      "name": "changeSetting",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_permissionToken",
+          "type": "address"
+        },
+        {
+          "name": "_permissionBalance",
+          "type": "uint256"
+        }
+      ],
+      "name": "changeTokenBalancePermission",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isForwarder",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_signer",
+          "type": "address"
+        }
+      ],
+      "name": "getBalance",
+      "outputs": [
+        {
+          "name": "available",
+          "type": "uint256"
+        },
+        {
+          "name": "locked",
+          "type": "uint256"
+        },
+        {
+          "name": "challenged",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getAction",
+      "outputs": [
+        {
+          "name": "script",
+          "type": "bytes"
+        },
+        {
+          "name": "context",
+          "type": "bytes"
+        },
+        {
+          "name": "state",
+          "type": "uint8"
+        },
+        {
+          "name": "challengeEndDate",
+          "type": "uint64"
+        },
+        {
+          "name": "submitter",
+          "type": "address"
+        },
+        {
+          "name": "settingId",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getChallenge",
+      "outputs": [
+        {
+          "name": "context",
+          "type": "bytes"
+        },
+        {
+          "name": "settlementEndDate",
+          "type": "uint64"
+        },
+        {
+          "name": "challenger",
+          "type": "address"
+        },
+        {
+          "name": "settlementOffer",
+          "type": "uint256"
+        },
+        {
+          "name": "arbitratorFeeAmount",
+          "type": "uint256"
+        },
+        {
+          "name": "arbitratorFeeToken",
+          "type": "address"
+        },
+        {
+          "name": "state",
+          "type": "uint8"
+        },
+        {
+          "name": "disputeId",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getDispute",
+      "outputs": [
+        {
+          "name": "ruling",
+          "type": "uint256"
+        },
+        {
+          "name": "submitterFinishedEvidence",
+          "type": "bool"
+        },
+        {
+          "name": "challengerFinishedEvidence",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getCurrentSettingId",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_settingId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getSetting",
+      "outputs": [
+        {
+          "name": "content",
+          "type": "bytes"
+        },
+        {
+          "name": "delayPeriod",
+          "type": "uint64"
+        },
+        {
+          "name": "settlementPeriod",
+          "type": "uint64"
+        },
+        {
+          "name": "collateralAmount",
+          "type": "uint256"
+        },
+        {
+          "name": "challengeCollateral",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getTokenBalancePermission",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMissingArbitratorFees",
+      "outputs": [
+        {
+          "name": "feeToken",
+          "type": "address"
+        },
+        {
+          "name": "missingFees",
+          "type": "uint256"
+        },
+        {
+          "name": "totalFees",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_signer",
+          "type": "address"
+        }
+      ],
+      "name": "canSign",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "canCancel",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "canChallenge",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "canSettle",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "canDispute",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "canClaimSettlement",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "canRuleDispute",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "canExecute",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_script",
+          "type": "bytes"
+        }
+      ],
+      "name": "forward",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_sender",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "canForward",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
+}
