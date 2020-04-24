@@ -3,7 +3,7 @@ import { NewAppProxy } from '../types/templates/Kernel/Kernel'
 import { DAO, Agreement } from '../types/schema'
 import { Agreement as AgreementTemplate } from '../types/templates'
 
-let AGREEMENT_APP_ID = '0x1234567812345678123456781234567800000000000000000000000000000000'
+let AGREEMENT_APP_ID = '0x980c281816072b3147b96fa284b7b1e78d51f7df83e33073276b4d7e48b44e8f'
 
 export function handleNewProxyApp(event: NewAppProxy): void {
   let appId = event.params.appId.toHexString()

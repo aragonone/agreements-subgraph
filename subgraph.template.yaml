@@ -101,6 +101,6 @@ templates:
           handler: handleBalanceSlashed
         - event: SettingChanged(uint256)
           handler: handleSettingChanged
-        - event: TokenBalancePermissionChanged(address,uint256)
+        - event: TokenBalancePermissionChanged(address,uint256,address,uint256)
           handler: handleTokenBalancePermissionChanged
       file: ./src/Agreement.ts

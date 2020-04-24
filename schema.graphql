@@ -10,6 +10,9 @@ type Agreement @entity {
   collateralToken: ERC20
   arbitrator: Bytes
   currentSetting: Setting
+  actions: [Action!] @derivedFrom(field: "agreement")
+  signers: [Signer!] @derivedFrom(field: "agreement")
+  settings: [Setting!] @derivedFrom(field: "agreement")
   tokenBalancePermission: TokenBalancePermission @derivedFrom(field: "agreement")
 }
 
@@ -31,6 +34,7 @@ enum ChallengeState {
 
 type Signer @entity {
   id: ID!
+  agreement: Agreement!
   address: Bytes!
   available: BigInt!
   locked: BigInt!
@@ -40,6 +44,7 @@ type Signer @entity {
 
 type Action @entity {
   id: ID!
+  agreement: Agreement!
   actionId: BigInt!
   challengeEndDate: BigInt!
   script: Bytes!
@@ -86,6 +91,7 @@ type Evidence @entity {
 
 type Setting @entity {
   id: ID!
+  agreement: Agreement!
   settingId: BigInt!
   content: Bytes!
   delayPeriod: BigInt!
@@ -97,8 +103,10 @@ type Setting @entity {
 type TokenBalancePermission @entity {
   id: ID!
   agreement: Agreement!
-  token: ERC20!
-  balance: BigInt!
+  signToken: ERC20
+  signBalance: BigInt!
+  challengeToken: ERC20
+  challengeBalance: BigInt!
 }
 
 type ERC20 @entity {

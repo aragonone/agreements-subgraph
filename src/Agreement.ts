@@ -31,6 +31,7 @@ export function handleActionScheduled(event: ActionScheduled): void {
 
   let action = new Action(actionId)
   let actionData = agreementApp.getAction(event.params.actionId)
+  action.agreement = event.address.toHex()
   action.actionId = event.params.actionId
   action.script = actionData.value0
   action.context = actionData.value1
@@ -170,6 +171,7 @@ export function handleSettingChanged(event: SettingChanged): void {
 
   let currentSettingId = buildSettingId(event.address, event.params.settingId)
   let setting = new Setting(currentSettingId)
+  setting.agreement = event.address.toHex()
   setting.settingId = event.params.settingId
   setting.content = settingData.value0
   setting.delayPeriod = settingData.value1
@@ -187,16 +189,20 @@ export function handleSettingChanged(event: SettingChanged): void {
 }
 
 export function handleTokenBalancePermissionChanged(event: TokenBalancePermissionChanged): void {
-  if (event.params.token.toHexString() != '0x0000000000000000000000000000000000000000') {
-    let permission = new TokenBalancePermission('0')
-    permission.token = buildERC20(event.params.token)
-    permission.balance = event.params.balance
-    permission.save()
+  let permission = new TokenBalancePermission(buildPermissionId(event.address))
+  permission.agreement = event.address.toHex()
+  permission.signBalance = event.params.signBalance
+  permission.challengeBalance = event.params.challengeBalance
 
-    let agreement = Agreement.load(event.address.toHex())
-    agreement.tokenBalancePermission = '0'
-    agreement.save()
+  if (event.params.signToken.toHexString() != '0x0000000000000000000000000000000000000000') {
+    permission.signToken = buildERC20(event.params.signToken)
   }
+
+  if (event.params.challengeToken.toHexString() != '0x0000000000000000000000000000000000000000') {
+    permission.challengeToken = buildERC20(event.params.challengeToken)
+  }
+
+  permission.save()
 }
 
 function loadOrCreateSigner(agreement: Address, signerAddress: Address): Signer | null {
@@ -204,6 +210,7 @@ function loadOrCreateSigner(agreement: Address, signerAddress: Address): Signer 
   let signer = Signer.load(signerId)
   if (signer === null) {
     signer = new Signer(signerId)
+    signer.agreement = agreement.toHex()
     signer.address = signerAddress
     signer.available = new BigInt(0)
     signer.locked = new BigInt(0)
@@ -266,11 +273,15 @@ function buildActionId(agreement: Address, actionId: BigInt): string {
 }
 
 function buildDisputeId(agreement: Address, disputeId: BigInt): string {
-  return agreement.toHex() + "-setting-" + disputeId.toString()
+  return agreement.toHex() + "-dispute-" + disputeId.toString()
 }
 
 function buildSettingId(agreement: Address, settingId: BigInt): string {
-  return agreement.toHex() + "-dispute-" + settingId.toString()
+  return agreement.toHex() + "-setting-" + settingId.toString()
+}
+
+function buildPermissionId(agreement: Address): string {
+  return agreement.toHex() + "-permission-0"
 }
 
 export function buildId(event: EthereumEvent): string {

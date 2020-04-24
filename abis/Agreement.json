@@ -355,7 +355,7 @@
         },
         {
           "indexed": true,
-          "name": "arbtirator",
+          "name": "arbitrator",
           "type": "address"
         },
         {
@@ -563,12 +563,22 @@
       "inputs": [
         {
           "indexed": false,
-          "name": "token",
+          "name": "signToken",
           "type": "address"
         },
         {
           "indexed": false,
-          "name": "balance",
+          "name": "signBalance",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "challengeToken",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "challengeBalance",
           "type": "uint256"
         }
       ],
@@ -709,11 +719,19 @@
           "type": "uint64"
         },
         {
-          "name": "_permissionToken",
+          "name": "_signPermissionToken",
           "type": "address"
         },
         {
-          "name": "_permissionBalance",
+          "name": "_signPermissionBalance",
+          "type": "uint256"
+        },
+        {
+          "name": "_challengePermissionToken",
+          "type": "address"
+        },
+        {
+          "name": "_challengePermissionBalance",
           "type": "uint256"
         }
       ],
@@ -979,11 +997,19 @@
       "constant": false,
       "inputs": [
         {
-          "name": "_permissionToken",
+          "name": "_signPermissionToken",
           "type": "address"
         },
         {
-          "name": "_permissionBalance",
+          "name": "_signPermissionBalance",
+          "type": "uint256"
+        },
+        {
+          "name": "_challengePermissionToken",
+          "type": "address"
+        },
+        {
+          "name": "_challengePermissionBalance",
           "type": "uint256"
         }
       ],
@@ -1202,11 +1228,19 @@
       "name": "getTokenBalancePermission",
       "outputs": [
         {
-          "name": "",
+          "name": "signPermissionToken",
           "type": "address"
         },
         {
-          "name": "",
+          "name": "signPermissionBalance",
+          "type": "uint256"
+        },
+        {
+          "name": "challengePermissionToken",
+          "type": "address"
+        },
+        {
+          "name": "challengePermissionBalance",
           "type": "uint256"
         }
       ],
@@ -1264,6 +1298,25 @@
       "constant": true,
       "inputs": [
         {
+          "name": "_challenger",
+          "type": "address"
+        }
+      ],
+      "name": "canChallenge",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
           "name": "_actionId",
           "type": "uint256"
         }
@@ -1287,7 +1340,7 @@
           "type": "uint256"
         }
       ],
-      "name": "canChallenge",
+      "name": "canChallengeAction",
       "outputs": [
         {
           "name": "",
